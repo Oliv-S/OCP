@@ -5,3 +5,6 @@
 /Season$3.class
 /Season$4.class
 /Season.class
+/ClassWithNested$InnerClass.class
+/OuterClassWithInner$InnerClass.class
+/OuterClassWithInner.class
