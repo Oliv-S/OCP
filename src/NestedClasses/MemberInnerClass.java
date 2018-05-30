@@ -1,5 +1,6 @@
+package NestedClasses;
 
-public class OuterClassWithInner {
+public class MemberInnerClass {
 	
 	private String greeting = "This is ClassWithNested Class!!!";
 	
@@ -8,11 +9,11 @@ public class OuterClassWithInner {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//First type of use Inner
-		OuterClassWithInner outer = new OuterClassWithInner();
+		MemberInnerClass outer = new MemberInnerClass();
 		outer.CallInnerClass();
 		
 		//Second type of use Inner
-		OuterClassWithInner.InnerClass inner = outer.new InnerClass();
+		MemberInnerClass.InnerClass inner = outer.new InnerClass();
 		inner.printGreeting();
 		//System.out.println("This is ClassWithNested Class!!!");
 
