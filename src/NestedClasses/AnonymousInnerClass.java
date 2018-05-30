@@ -26,12 +26,25 @@ public class AnonymousInnerClass {
 		};
 		return inner.add(var1, var2);
 	}
+	
+	public int calc2(int var1, int var2) {
+		return add(var1, var2,new InnerInterface() {
+			public int add(int var1, int var2) {
+				return var1+var2;
+			};
+		});		
+	}
+	
+	public int add(int var1, int var2, InnerInterface interf) {
+		return interf.add(var1, var2);
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		AnonymousInnerClass outer = new  AnonymousInnerClass();
 		System.out.println(outer.calc(10,15));
 		System.out.println(outer.calcWithInterface(10,15));
+		System.out.println(outer.calc2(10,15));
 
 	}
 
