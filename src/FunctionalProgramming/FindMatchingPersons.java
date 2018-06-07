@@ -1,6 +1,7 @@
 package FunctionalProgramming;
 
 import java.time.LocalDate;
+import java.util.function.Predicate;
 
 public class FindMatchingPersons {
 
@@ -14,6 +15,12 @@ public class FindMatchingPersons {
 		}
 	}
 
+	private static void testPersonWIthPredikate(Person person, Predicate<Person> checker) {
+		if (checker.test(person)) {
+			System.out.println(person.getName());
+		}
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Person person1 = new Person("Oli", LocalDate.of(1977, 12, 25), false);
@@ -22,6 +29,9 @@ public class FindMatchingPersons {
 		testPerson(person1, a->a.isFemale());
 		testPerson(person2, a->a.isFemale());
 
+		testPersonWIthPredikate(person1, a->!a.isFemale());
+		testPersonWIthPredikate(person2, a->!a.isFemale());
+		
 	}
 
 }
