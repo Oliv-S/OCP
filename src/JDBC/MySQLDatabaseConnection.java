@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringStyle;
+
 public class MySQLDatabaseConnection {
 	public static void main(String[] args) {
 		String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
@@ -12,6 +15,8 @@ public class MySQLDatabaseConnection {
 		final String pass = "UserPass";
 		try {
 			Connection conn = DriverManager.getConnection(url,user,pass);
+			//System.out.println(ToStringBuilder.reflectionToString(conn, ToStringStyle.SHORT_PREFIX_STYLE));
+			System.out.println(conn);
 			Statement statment = conn.createStatement();
 			String sql = "SELECT name FROM animal";
 			ResultSet resultSet = statment.executeQuery(sql);
