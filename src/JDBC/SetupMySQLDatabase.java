@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class SetupMySQLDatabase {
 	   public static void main(String[] args) throws Exception {
-		      String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+		      String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 		      //  Database credentials
 		      final String user = "User";
 		      final String pass = "UserPass";
