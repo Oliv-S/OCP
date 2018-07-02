@@ -15,7 +15,7 @@ public class FindMatchingPersons {
 		}
 	}
 
-	private static void testPersonWIthPredikate(Person person, Predicate<Person> checker) {
+	private static void testPersonWithPredikate(Person person, Predicate<Person> checker) {
 		if (checker.test(person)) {
 			System.out.println(person.getName());
 		}
@@ -29,8 +29,8 @@ public class FindMatchingPersons {
 		testPerson(person1, a->a.isFemale());
 		testPerson(person2, a->a.isFemale());
 
-		testPersonWIthPredikate(person1, a->!a.isFemale());
-		testPersonWIthPredikate(person2, a->!a.isFemale());
+		testPersonWithPredikate(person1, a->!a.isFemale());
+		testPersonWithPredikate(person2, a->!a.isFemale());
 		
 	}
 
