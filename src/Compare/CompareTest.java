@@ -29,7 +29,7 @@ public class CompareTest {
 //			}
 //		};
 //		
-//		Comparator<Squirrel> multiComparator = new MultiFieldComparator();
+		Comparator<Squirrel> multiComparator = new MultiFieldComparator();
 //		
 //		Arrays.sort(squirrels, multiComparator);
 //		System.out.println("***********");
@@ -57,14 +57,17 @@ public class CompareTest {
 //		}
 		
 //		*****************************************
-		//Arrays.sort(squirrels, MultiFieldComparator.orderByAgeReverse());
+		Arrays.sort(squirrels, MultiFieldComparator.orderByAgeReverse());
 		Arrays.sort(squirrels, MultiFieldComparator::compareByAge);
-		//Arrays.sort(squirrels, Comparator.reverseOrder());
+		Arrays.sort(squirrels, multiComparator::compare);
+		Arrays.sort(squirrels, Comparator.reverseOrder());
 		
 		System.out.println("***********");
 		for (Squirrel squirrel : squirrels) {
 			System.out.println(squirrel);
 		}
+		
+
 		
 		Set<Squirrel> set = new TreeSet<>((s1,s2)->s1.getAge()-s2.getAge());		
 
