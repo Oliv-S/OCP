@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-import org.apache.derby.tools.sysinfo;
-
 public class RemoovingConditionally {
 
 	public static void main(String[] args) {
