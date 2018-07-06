@@ -1,12 +1,10 @@
-import java.util.Iterator;
-
 public class MyEnums {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("HI. This is enum Demo.");	
 		
-		Season s = Season.SUMMER;
+		//Season s = Season.SUMMER;
 		for (Season curresntSeason : Season.values()) {
 			switch (curresntSeason) {
 			case SUMMER:
