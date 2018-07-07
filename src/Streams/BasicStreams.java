@@ -33,13 +33,13 @@ public class BasicStreams {
 		System.out.println("\nallMatch");
 		System.out.println(lst.stream().allMatch(i -> i<5));
 
-		System.out.println("\nanyMatch");
+		System.out.println("\n anyMatch");
 		System.out.println(lst.stream().anyMatch(i -> i<5));
 
-		System.out.println("\nnoneMatch");
+		System.out.println("\n noneMatch");
 		System.out.println(lst.stream().noneMatch(i -> i<5));
 
-		System.out.println("\nforEach");
+		System.out.println("\n forEach");
 		lst.stream().forEach(System.out::print);
 		
 		//Reduce
