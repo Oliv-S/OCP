@@ -57,12 +57,8 @@ public class BasicStreams {
 		System.out.println(stringList.stream().reduce("",String::concat));
 		stringList.stream().map(String::length).forEach(System.out::println);
 		System.out.println(stringList.stream().map(String::length).reduce(0,Integer::sum));
-		
-		char cc = 's';
-		String s = Character.toString(cc);
-		String strToReverse = "ASDVOSDFGKQOWEFKALSDFKALSDFSKLLLLLL";
-		//strToReverse.chars().forEach(System.out::println);
-		//strToReverse.chars().redu
+		System.out.println(stringList.stream().collect(Collectors.toList()));
+
 		
 		//Collect
 		System.out.println("\n\nCollect");
@@ -75,9 +71,13 @@ public class BasicStreams {
 		String strS = Stream.of(str).collect(String::new, String::concat, String::concat);
 		System.out.println(strS);//!!!!!!!!!!
 		
-				TreeSet<String> treeSet = Stream.of(str).collect(TreeSet::new,TreeSet::add,TreeSet::addAll);
-				System.out.println(treeSet);
-
+		TreeSet<String> treeSet = Stream.of(str).collect(TreeSet::new,TreeSet::add,TreeSet::addAll);
+		System.out.println(treeSet);
+				
+	
+		System.out.println("*******");
+		String strToReverse = "ASDVOSDFGKQOWEFKALSDFKALSDFSKLLLLLL";
+		Stream.of(strToReverse.toCharArray()).map(c->c.toString()+"-").forEach(System.out::println);
 		
 	}
 
