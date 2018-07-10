@@ -1,4 +1,4 @@
-package DatesTimes;
+package DatesTimesAndLocalization;
 
 import java.time.*;
 
@@ -41,7 +41,7 @@ public class DTPeriod {
 			System.out.println(lt);
 			lt = lt.plus(pt2).plus(pt3);			
 		}
-		
+
 		System.out.println("****");
 		System.out.println(Instant.now());
 
@@ -50,8 +50,20 @@ public class DTPeriod {
 		
 		System.out.println(ZonedDateTime.now());
 		System.out.println(ZonedDateTime.now().toInstant());
-		
 
+		System.out.println("**Start der Sommerzeit 2018 Deutschland**");
+				
+		LocalDateTime lDateTimeS = LocalDateTime.of(2018, 3, 25, 1, 30);
+		ZonedDateTime zdDateTimeS = ZonedDateTime.of(lDateTimeS, ZoneId.systemDefault());
+		System.out.println(zdDateTimeS);
+		System.out.println(zdDateTimeS.plusHours(1));
+		
+		System.out.println("**Ende der Sommerzeit 2018 Deutschland**");
+		
+		LocalDateTime lDateTimeE = LocalDateTime.of(2018, 10, 28, 2, 30);
+		ZonedDateTime zdDateTimeE = ZonedDateTime.of(lDateTimeE, ZoneId.systemDefault());
+		System.out.println(zdDateTimeE);
+		System.out.println(zdDateTimeE.plusHours(1));
 
 	}
 
