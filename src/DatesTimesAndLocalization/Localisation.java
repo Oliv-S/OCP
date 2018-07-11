@@ -30,6 +30,9 @@ public class Localisation {
 				.build();
 
 		System.out.println(localeBuilder);
+		
+		localeBuilder = new Locale("en", "US");
+		System.out.println(localeBuilder);
 
 	}
 
