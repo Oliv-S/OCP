@@ -3,6 +3,7 @@ package JDBC;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -20,8 +21,19 @@ public class MySQLDatabaseConnection {
 			Statement statment = conn.createStatement();
 			String sql = "SELECT name FROM animal";
 			ResultSet resultSet = statment.executeQuery(sql);
+
 			while (resultSet.next()) {
 				System.out.println(resultSet.getString(1));				
+			}
+			
+			sql = "SELECT * FROM animal";
+			resultSet = statment.executeQuery(sql);
+			ResultSetMetaData rsmd = resultSet.getMetaData();
+			while (resultSet.next()) {
+				for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+					System.out.print(resultSet.getString(i)+"\t");					
+				}
+				System.out.println();
 			}
 		}
 		catch (Exception e) {
