@@ -1,4 +1,4 @@
-package FunctionalProgramming;
+package functional_programming;
 
 import java.util.ArrayList;
 import java.util.HashMap;

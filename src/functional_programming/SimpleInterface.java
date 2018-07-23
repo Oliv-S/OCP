@@ -1,4 +1,4 @@
-package FunctionalProgramming;
+package functional_programming;
 
 @FunctionalInterface
 public interface SimpleInterface {

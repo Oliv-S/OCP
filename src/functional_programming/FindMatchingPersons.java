@@ -1,4 +1,4 @@
-package FunctionalProgramming;
+package functional_programming;
 
 import java.time.LocalDate;
 import java.util.function.Predicate;
