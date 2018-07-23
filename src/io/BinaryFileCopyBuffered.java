@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class FileCopyBuffered {
+public class BinaryFileCopyBuffered {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

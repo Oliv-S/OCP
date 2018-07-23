@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class FileCopy {
+public class BinaryFileCopy {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
