@@ -1,6 +1,7 @@
 package nio2;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.*;
 import java.nio.file.*;
 import java.util.*;
@@ -144,6 +145,61 @@ public class CreatingPathsExample {
 		Path path3 = path1.resolve(path2);
 		System.out.println("Normalize \t" + path3 + " \r\nto \t\t" + path3.normalize());
 		
+		//Checking for Existence with toRealPath
+		System.out.println("*******Checking for Existence with toRealPath***********");
+		path1 = Paths.get("target/classes/nio2/CreatingPathsExample.class").toAbsolutePath();
+		path2 = Paths.get("nio2/CreatingPathsExample.class").toAbsolutePath();
+		try {
+			path1 = path1.toRealPath();
+			System.out.println("path exist: "  + path1);
+			path2 = path2.toRealPath();
+			System.out.println("path exist: "  + path2);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			System.out.println("Path not exist: + " + e1.getMessage());
+//			e1.printStackTrace();
+		}
+		
+		//Gain access to real working Directory with toRealPath
+		System.out.println();
+		System.out.println("*******real working Directory with toRealPath***********");
+		try {
+			System.out.println(Paths.get(".").toRealPath());
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		//Testing for File exist with Files.exists(Path)
+		System.out.println();
+		System.out.println("*******Testing for File exist with Files.exists(Path)***********");
+		path3 = Paths.get("C:");
+		System.out.println("File: " + path1 + "" + (Files.exists(path1)?" \t- Exists":" \t- Not Exists"));
+		System.out.println("File: " + path2 + "" + (Files.exists(path2)?" \t\t\t- Exists":" \t\t\t- Not Exists"));
+		System.out.println("File: " + path3 + "" + (Files.exists(path3)?" \t- Exists":" \t- Not Exists"));
+		
+		//Testing uniqueness for 2 paths
+		System.out.println();
+		System.out.println("*******Testing uniqueness for 2 paths***********");
+		path1 = Paths.get("C:", "Windows");
+		path2 = Paths.get("C:/windows/systen32/../");
+		try {
+			System.out.println("Path: " + path1 + " and " + path2 + (Files.isSameFile(path1, path2)?" \t- The same":" \t- Different"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			System.out.println("File not exist" + e1.getMessage());
+		}
+		
+		//Copying Files
+		System.out.println();
+		System.out.println("*******Copying Files***********");
+		try {
+			Files.copy(Paths.get("C:\\Utils\\rarreg.key"), System.out);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
 	}
 
 }
