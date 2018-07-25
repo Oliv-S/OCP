@@ -16,6 +16,7 @@ public class CommonStreanOperations {
 		String fileName = "target\\classes\\io\\test.txt";
 		File file = new File (fileName);
 		
+		
 		if (file.exists()) {
 			System.out.println("File "+file.getAbsolutePath()+ " is exist!");
 			
