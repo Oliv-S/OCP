@@ -14,6 +14,8 @@ import java.nio.file.*;
 public class FilesCopy {
 
 	public static void main(String[] args) {
+		
+		/*
 		// The are 3 overloaded version of Files.copy()
 		
 		System.out.println("Current working folder: " + Paths.get(".").toAbsolutePath());
@@ -82,6 +84,15 @@ public class FilesCopy {
 		
 		
 		System.out.println("Done");
+		*/
+		
+		try {
+			Files.move(Paths.get("test.txt"), Paths.get("target.txt"));
+			Files.move(Paths.get("target.txt"), Paths.get("test.txt"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

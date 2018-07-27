@@ -1,5 +1,6 @@
 package nio2;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 
@@ -32,6 +33,15 @@ public class DirectoryWalking {
 			Files.list(path.resolve("target/Classes"))
 				.filter(p->Files.isDirectory(p))
 				.forEach(System.out::println);
+			
+			//Finding Files with depth
+			System.out.println("********");
+			System.out.println("***Depth = 0*");
+			Files.find(path, 0, (a,b)->true).forEach(System.out::println);
+			System.out.println("***Depth = 1*");
+			Files.find(path, 1, (a,b)->true).forEach(System.out::println);
+			
+			System.out.println(Paths.get(".").normalize().getNameCount());
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

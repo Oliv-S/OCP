@@ -1,8 +1,12 @@
 package nio2;
 
+import java.io.IOException;
+import java.nio.file.CopyOption;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +45,17 @@ public class SymLinksExample {
 			System.out.println(Files.isSymbolicLink(path)?"Is a SymLink":"Is not a SymLink");
 			System.out.println();
 		}
-
+		
+		Path hlToFile = Paths.get("target", "classes", "hl_to_file.txt");
+		Path targetFile = Paths.get("target", "classes", "new_file_from_hl_to_file.txt");
+		System.out.println("Mooving SymLinks "+ Paths.get("target", "classes", "hl_to_file.txt"));
+		System.out.println("to " + targetFile);
+		try {
+			Files.move(hlToFile, targetFile, StandardCopyOption.ATOMIC_MOVE,LinkOption.NOFOLLOW_LINKS);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
