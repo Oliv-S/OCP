@@ -199,6 +199,13 @@ public class CreatingPathsExample {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		
+		//Extra tests
+		System.out.println("\r\n*********************");
+		Path newPath = Paths.get("/use/home/test/best/koala/bear");
+		System.out.println(newPath);
+		System.out.println(newPath.subpath(1, 3));
+		System.out.println(newPath.subpath(1, 3).getName(1));
 
 	}
 
